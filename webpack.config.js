@@ -3,7 +3,7 @@ module.exports = {
     entry: './src/index.js',
     output: {
         path: __dirname + '/dist',
-        filename: 'bundle.js'
+        filename: "[name].[hash].js"
     },
     module: {
         rules: [
@@ -42,5 +42,5 @@ module.exports = {
             }
         ]
     },
-    plugins: [new HtmlWebpackPlugin({template: './src/index.html', inject: false})]
+    plugins: [new HtmlWebpackPlugin({template: './src/index.html', inject: true})]
 };
