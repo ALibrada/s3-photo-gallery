@@ -1,8 +1,8 @@
 function createUrl(Key) {
     if (process.env.NODE_ENV === 'production') {
-        const AWS = require('aws-sdk');
+        const S3 = require('aws-sdk/clients/s3');
         const {secretAccessKey, accessKeyId, region, Bucket} = require('../config.json');
-        const s3 = new AWS.S3({apiVersion: '2006-03-01', accessKeyId, secretAccessKey, region});
+        const s3 = new S3({apiVersion: '2006-03-01', accessKeyId, secretAccessKey, region});
         return s3.getSignedUrl('getObject', {Bucket, Key});
     } else {
         return `http://localhost:8000/${Key}`;
