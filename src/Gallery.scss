@@ -1,0 +1,16 @@
+@import "variables";
+
+.pswp__container { transition: transform 0.35s ease-in-out; }
+
+.gallery {
+    padding: 0 20px 0 0;
+    
+    @media screen and (min-width: $break-large) {
+        padding: 0 70px;
+    }
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}

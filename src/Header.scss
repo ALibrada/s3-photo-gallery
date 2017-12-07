@@ -1,0 +1,29 @@
+.header {
+    height: 70px;
+    display: flex;
+    background: white;
+    border-bottom: 1px solid #E6EAEA;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    &__menu {
+        width: 100px;
+        border-right: 1px solid #E6EAEA;
+    }
+    
+    &__title {
+        flex-grow: 1;
+        font-size: 18px;
+        font-weight: 700;
+        margin-left: -100px;
+    }
+
+    &__title, &__menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
