@@ -9,7 +9,8 @@ const options = {
   contentBase: './dist',
   hot: true,
   host: 'localhost',
-  stats: {colors: true}
+  stats: {colors: true},
+  historyApiFallback: true
 };
 config.plugins.push(new webpack.HotModuleReplacementPlugin())
 WebpackDevServer.addDevServerEntrypoints(config, options);

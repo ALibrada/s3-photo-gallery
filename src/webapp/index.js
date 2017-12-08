@@ -1,9 +1,16 @@
 import {h, render} from 'preact';
+import Router from 'preact-router';
 
 let elem, App;
 function init() {
     App = require('./App.js').default;
-    elem = render(h(App), document.querySelector('.root'), elem);
+    function Main() {
+        return h(Router, {},
+            h(App, {path: '/'}),
+            h(App, {path: '/edit', readonly: false}),
+        );
+    }
+    elem = render(Main(), document.querySelector('.root'), elem);
 }
 
 init();

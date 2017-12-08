@@ -48,10 +48,10 @@ class App extends Component {
         }
     }
 
-    render({}, {items, loading}) {
+    render({readonly}, {items, loading}) {
         return div({},
             h(Header),
-            h(Gallery, {items})
+            h(Gallery, {items, readonly})
         );
     }
 }

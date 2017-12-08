@@ -20,9 +20,9 @@ class Gallery extends Component {
         gallery.init();
     }
 
-    render({items}) {
+    render({items, readonly}) {
         const onClick = this.onThumbClick.bind(this);
-        return div({className: 'gallery'}, items.map((item, i) => h(Item, {item, onClick, i})));
+        return div({className: 'gallery'}, items.map((item, i) => h(Item, {item, onClick, i, readonly})));
     }
 }
 
