@@ -22,7 +22,7 @@ class Gallery extends Component {
 
     render({items}) {
         const onClick = this.onThumbClick.bind(this);
-        return div({className: 'gallery'}, items.map((item, i) => Item({item, onClick, i})));
+        return div({className: 'gallery'}, items.map((item, i) => h(Item, {item, onClick, i})));
     }
 }
 
