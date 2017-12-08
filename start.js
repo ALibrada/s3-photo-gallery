@@ -6,12 +6,13 @@ const port = 8080;
 const path = require('path');
 
 const options = {
-  publicPath: config.output.publicPath,
+  contentBase: './dist',
   hot: true,
-  inline: true,
-  stats: { colors: true }
+  host: 'localhost',
+  stats: {colors: true}
 };
-
+config.plugins.push(new webpack.HotModuleReplacementPlugin())
+WebpackDevServer.addDevServerEntrypoints(config, options);
 const server = new WebpackDevServer(webpack(config), options);
 
 server.listen(port, 'localhost', function (err) {

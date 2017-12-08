@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
     entry: './src/webapp/index.js',
     output: {
@@ -42,5 +43,11 @@ module.exports = {
             }
         ]
     },
-    plugins: [new HtmlWebpackPlugin({template: './src/webapp/index.html', inject: true})]
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './src/webapp/index.html',
+            inject: true
+        }),
+        new CleanWebpackPlugin(['dist'])
+    ]
 };
