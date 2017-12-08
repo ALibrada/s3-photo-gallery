@@ -56,4 +56,11 @@
         padding: 20px;
         background: white;
     }
+    &__info-row {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__info-label {
+        font-weight: 700;
+    }
 }

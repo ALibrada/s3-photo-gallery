@@ -1,10 +1,10 @@
 import {h} from 'preact';
 import hh from 'hyperscript-helpers';
 import {createUrl} from './utils.js';
-const {div, img, a, figure} = hh(h);
+const {div, img, a, figure, span} = hh(h);
 import './Item.scss';
 
-function Item({item, onClick}) {
+function Item({item, onClick, i}) {
     function clicked(event) {
         event.preventDefault();
         onClick(item);
@@ -20,7 +20,18 @@ function Item({item, onClick}) {
         ),
         div({className: 'item__info'},
             div({className: 'item__info-content'},
-                div({}, new Date(item.date).toLocaleDateString())
+                div({className: 'item__info-row'},
+                    span({className: 'item__info-label'}, 'Date') ,
+                    span({}, new Date(item.date).toLocaleDateString())
+                ),
+                item.location && div({className: 'item__info-row'},
+                    span({className: 'item__info-label'}, 'Location') ,
+                    span({}, item.location)
+                ),
+                div({className: 'item__info-row'},
+                    span({className: 'item__info-label'}, 'Name') ,
+                    span({}, i)
+                )
             ),
             div({className: 'item__info-footer'})
         )

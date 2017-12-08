@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
-    "start": "webpack-dev-server --inline --hot"
+    "start": "node start.js"
   },
   "devDependencies": {
     "aws-sdk": "^2.147.0",

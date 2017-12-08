@@ -1,7 +1,7 @@
 import {h, Component} from 'preact';
 import hh from 'hyperscript-helpers';
 import './Header.scss';
-import {name} from '../db.json';
+import {name} from '../../db.json';
 const {div, header} = hh(h);
 
 function Header() {

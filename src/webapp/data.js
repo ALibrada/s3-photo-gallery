@@ -1,4 +1,4 @@
-import db from '../db.json';
+import db from '../../db.json';
 
 function getItems(start, end) {
     const arr = JSON.parse(JSON.stringify(db.photos));

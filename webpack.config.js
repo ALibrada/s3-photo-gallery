@@ -1,6 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/webapp/index.js',
     output: {
         path: __dirname + '/dist',
         filename: "[name].[hash].js"
@@ -42,5 +42,5 @@ module.exports = {
             }
         ]
     },
-    plugins: [new HtmlWebpackPlugin({template: './src/index.html', inject: true})]
+    plugins: [new HtmlWebpackPlugin({template: './src/webapp/index.html', inject: true})]
 };
