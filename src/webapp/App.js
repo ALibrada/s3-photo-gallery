@@ -7,7 +7,7 @@ import {getItems} from './data.js';
 const {div, img, a} = hh(h);
 import {throttle} from './utils.js';
 
-const STEP = 20;
+const STEP = 30;
 
 function getDistFromBottom() {
     const scrollPosition = window.pageYOffset;
