@@ -3,7 +3,6 @@ import hh from 'hyperscript-helpers';
 import Gallery from './Gallery.js';
 import Header from './Header.js';
 import './App.scss';
-import {getItems} from './data.js';
 const {div, img, a} = hh(h);
 import {throttle} from './utils.js';
 
@@ -25,7 +24,10 @@ class App extends Component {
 
     getItems() {
         const {n} = this.state;
-        this.setState({items: getItems(0, n)});
+        const {items: data} = this.props;
+        const arr = JSON.parse(JSON.stringify(data));
+        const items = arr.splice(0, n);
+        this.setState({items});
     }
 
     componentDidMount() {

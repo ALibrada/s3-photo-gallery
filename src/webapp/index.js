@@ -1,13 +1,15 @@
 import {h, render} from 'preact';
 import Router from 'preact-router';
+import db from '../../db.json';
 
 let elem, App;
 function init() {
     App = require('./App.js').default;
     function Main() {
+        const items = db.photos;
         return h(Router, {},
-            h(App, {path: '/'}),
-            h(App, {path: '/edit', readonly: false}),
+            h(App, {path: '/', items}),
+            h(App, {path: '/edit', readonly: false, items}),
         );
     }
     elem = render(Main(), document.querySelector('.root'), elem);
