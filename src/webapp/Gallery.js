@@ -15,14 +15,20 @@ class Gallery extends Component {
         const pswpElement = document.querySelector('.pswp');
         const index = this.props.items.findIndex(i => i === item);
         const options = { index };
-        const elements = this.props.items.map(item => ({src: createUrl(item.midi.src), h: item.midi.height, w: item.midi.width}));
+        const elements = this.props.items.map(item => ({
+            src: createUrl(item.midi.src), 
+            h: item.midi.height, 
+            w: item.midi.width
+        }));
         const gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, elements, options);
         gallery.init();
     }
 
     render({items, readonly}) {
         const onClick = this.onThumbClick.bind(this);
-        return div({className: 'gallery'}, items.map((item, i) => h(Item, {item, onClick, i, readonly})));
+        return div({className: 'gallery'},
+            items.map((item, i) => h(Item, {item, onClick, i, readonly}))
+        );
     }
 }
 

@@ -23,6 +23,7 @@ class Item extends Component {
         this.state.edit = false;
         this.onChange = this.onChange.bind(this);
         this.toggle = this.toggle.bind(this);
+        this.hide = this.hide.bind(this);
     }
 
     createInput(property) {
@@ -57,6 +58,12 @@ class Item extends Component {
         this.setState({edit: !edit})
     }
 
+    hide(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        this.props.item.hidden = true
+    }
+
     render({item, onClick, i, readonly = true, onChange = () => {}}, {edit}) {
         function clicked(event) {
             event.preventDefault();
@@ -65,6 +72,7 @@ class Item extends Component {
     
         return div({className: 'item'},
             !readonly && a({className: 'item__button', href: '#', onClick: this.toggle}, edit ? 'Cancel' : 'Edit'),
+            !readonly && a({className: 'item__button', href: '#', onClick: this.hide}, 'Hide'),
             figure({className: 'item__media', onClick: e => clicked(e)},
                 a({href: createUrl(item.midi.src)},
                     div({className: 'item__photo'},

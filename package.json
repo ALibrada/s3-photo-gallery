@@ -2,7 +2,7 @@
   "name": "photo-gallery",
   "version": "0.0.1",
   "description": "Photo gallery backed up in S3",
-  "main": "src/index.js",
+  "main": "src/webapp/index.js",
   "repository": "https://github.com/ALibrada/s3-photo-gallery.git",
   "author": "Antonio Librada",
   "license": "MIT",
